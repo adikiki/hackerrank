@@ -1,0 +1,22 @@
+int makeAnagram(string a, string b) {
+int n=a.size();
+int m=b.size();
+
+int ch1[26]={0},ch2[26]={0};
+
+for(int i=0;i<n;i++)
+{
+      ch1[a[i]-'a']++;
+}
+
+for(int j=0;j<m;j++)
+{
+    ch2[b[j]-'a']++;
+}
+int res=0;
+for(int i=0;i<26;i++)
+{ 
+  res +=abs(ch1[i]-ch2[i]);  
+}
+ return res;
+}
